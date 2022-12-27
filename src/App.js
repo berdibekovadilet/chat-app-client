@@ -8,14 +8,18 @@ function App() {
 
   return (
     <div className="wrapper">
-      <Routes>
-        <Route path="signin" element={<LoginForm />} />
-        <Route path="signup" element={<RegisterForm />} />
-        <Route
-          index
-          element={isAuth ? <Home /> : <Navigate replace to={"/signin"} />}
-        />
-      </Routes>
+      <section className="auth">
+        <div className="auth__content">
+          <Routes>
+            <Route path="signin" element={<LoginForm />} />
+            <Route path="signup" element={<RegisterForm />} />
+            <Route
+              index
+              element={isAuth ? <Home /> : <Navigate to={"/signin"} />}
+            />
+          </Routes>
+        </div>
+      </section>
     </div>
   );
 }
