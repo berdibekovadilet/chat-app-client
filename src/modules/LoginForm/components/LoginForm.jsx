@@ -3,10 +3,8 @@ import { LockOutlined, UserOutlined } from "@ant-design/icons";
 import { Form, Input } from "antd";
 import Block from "../../../components/Block";
 import Button from "../../../components/Button";
+import { Link } from "react-router-dom";
 const LoginForm = () => {
-  const onFinish = (values) => {
-    console.log("Received values of form: ", values);
-  };
   return (
     <section className="auth">
       <div className="auth__content">
@@ -15,14 +13,7 @@ const LoginForm = () => {
           <p>Пожалуйста, войдите в свой аккаунт</p>
         </div>
         <Block>
-          <Form
-            name="normal_login"
-            className="login-form"
-            initialValues={{
-              remember: true,
-            }}
-            onFinish={onFinish}
-          >
+          <Form className="login-form">
             <Form.Item
               name="username"
               rules={[
@@ -58,9 +49,9 @@ const LoginForm = () => {
               </Button>
             </Form.Item>
             <Form.Item>
-              <a href="/" className="auth register-link">
+              <Link className="auth__register-link" to="/signup">
                 Зарегистрироваться
-              </a>
+              </Link>
             </Form.Item>
           </Form>
         </Block>
