@@ -11,7 +11,7 @@ import Button from "../../../components/Button";
 import { Link } from "react-router-dom";
 
 const RegisterForm = () => {
-  const success = true;
+  const success = false;
 
   return (
     <section className="auth">
@@ -87,7 +87,7 @@ const RegisterForm = () => {
                 </Button>
               </Form.Item>
               <Form.Item>
-                <Link className="auth__register-link" to="/">
+                <Link className="auth__register-link" to="/signin">
                   Войти в аккаунт
                 </Link>
               </Form.Item>
@@ -102,6 +102,11 @@ const RegisterForm = () => {
                 На Вашу почту отправлено письмо с ссылкой на подтверждение
                 аккаунта.
               </p>
+              <Form.Item>
+                <Link className="auth__register-link" to="/">
+                  На главную
+                </Link>
+              </Form.Item>
             </div>
           )}
         </Block>
