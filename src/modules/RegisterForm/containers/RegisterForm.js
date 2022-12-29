@@ -1,5 +1,5 @@
 import { withFormik } from "formik";
-import validateForm from '../../../utils/validate';
+import validateForm from "../../../utils/validate";
 import RegisterForm from "../components/RegisterForm";
 
 export default withFormik({
@@ -15,7 +15,8 @@ export default withFormik({
     return errors;
   },
   handleSubmit: (values, { setSubmitting, props }) => {
-   alert(values)
+    alert(JSON.stringify(values, null, 2));
+    setSubmitting(false);
   },
   displayName: "RegisterForm",
 })(RegisterForm);
